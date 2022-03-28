@@ -12,6 +12,17 @@
 		B72AFDDB27F18BE200021B36 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72AFDDA27F18BE200021B36 /* Core.framework */; };
 		B72AFDDF27F18BE800021B36 /* Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72AFDDE27F18BE800021B36 /* Component.framework */; };
 		B72AFDE227F18BEE00021B36 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72AFDE127F18BEE00021B36 /* Networking.framework */; };
+		B79723F927F1AA2100111F24 /* FarmingHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79723F827F1AA2000111F24 /* FarmingHistoryViewModel.swift */; };
+		B797240127F1ADF000111F24 /* ActiveFarmingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79723FF27F1ADF000111F24 /* ActiveFarmingTableViewCell.swift */; };
+		B797240227F1ADF000111F24 /* ActiveFarmingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B797240027F1ADF000111F24 /* ActiveFarmingTableViewCell.xib */; };
+		B797240527F1B8E700111F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B797240427F1B8E700111F24 /* Assets.xcassets */; };
+		B797240827F1B99700111F24 /* FarmingHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797240627F1B99700111F24 /* FarmingHistoryTableViewCell.swift */; };
+		B797240927F1B99700111F24 /* FarmingHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B797240727F1B99700111F24 /* FarmingHistoryTableViewCell.xib */; };
+		B7B87C2B27F191ED003284C6 /* FarmingNibVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B87C2A27F191ED003284C6 /* FarmingNibVars.swift */; };
+		B7B87C2D27F19200003284C6 /* FarmingOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B87C2C27F19200003284C6 /* FarmingOpener.swift */; };
+		B7B87C3027F192A8003284C6 /* Farming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B87C2F27F192A8003284C6 /* Farming.storyboard */; };
+		B7B87C3227F192E9003284C6 /* ContentFarmingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B87C3127F192E9003284C6 /* ContentFarmingViewController.swift */; };
+		B7C8028B27F19E1600B08918 /* FarmingHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8028A27F19E1500B08918 /* FarmingHistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		B72AFDDA27F18BE200021B36 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72AFDDE27F18BE800021B36 /* Component.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Component.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72AFDE127F18BEE00021B36 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B79723F827F1AA2000111F24 /* FarmingHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingHistoryViewModel.swift; sourceTree = "<group>"; };
+		B79723FF27F1ADF000111F24 /* ActiveFarmingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveFarmingTableViewCell.swift; sourceTree = "<group>"; };
+		B797240027F1ADF000111F24 /* ActiveFarmingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveFarmingTableViewCell.xib; sourceTree = "<group>"; };
+		B797240427F1B8E700111F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B797240627F1B99700111F24 /* FarmingHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B797240727F1B99700111F24 /* FarmingHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FarmingHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		B7B87C2A27F191ED003284C6 /* FarmingNibVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingNibVars.swift; sourceTree = "<group>"; };
+		B7B87C2C27F19200003284C6 /* FarmingOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingOpener.swift; sourceTree = "<group>"; };
+		B7B87C2F27F192A8003284C6 /* Farming.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Farming.storyboard; sourceTree = "<group>"; };
+		B7B87C3127F192E9003284C6 /* ContentFarmingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFarmingViewController.swift; sourceTree = "<group>"; };
+		B7C8028A27F19E1500B08918 /* FarmingHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmingHistoryViewController.swift; sourceTree = "<group>"; };
 		C5EB92A9ED1F08114EE34241 /* Pods-Farming.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farming.release (development).xcconfig"; path = "Target Support Files/Pods-Farming/Pods-Farming.release (development).xcconfig"; sourceTree = "<group>"; };
 		C67FD74E143C51F9C2463675 /* Pods-Farming.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farming.release (staging).xcconfig"; path = "Target Support Files/Pods-Farming/Pods-Farming.release (staging).xcconfig"; sourceTree = "<group>"; };
 		F5D989D8DF324B44D22A0BB5 /* Pods-Farming.debug (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farming.debug (staging).xcconfig"; path = "Target Support Files/Pods-Farming/Pods-Farming.debug (staging).xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				B72AFDD227F18B2400021B36 /* Farming.h */,
+				B7B87C2F27F192A8003284C6 /* Farming.storyboard */,
+				B797240327F1B8D500111F24 /* Assets */,
+				B79723FA27F1AD1600111F24 /* Cell */,
+				B79723F727F1A9B700111F24 /* ViewModel */,
+				B7B87C2E27F1928A003284C6 /* ViewController */,
+				B7B87C2927F191D4003284C6 /* Utilities */,
 			);
 			path = Farming;
 			sourceTree = "<group>";
@@ -93,6 +121,51 @@
 				45A28DB1F07D91726BEA8617 /* Pods_Farming.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B79723F727F1A9B700111F24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B79723F827F1AA2000111F24 /* FarmingHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B79723FA27F1AD1600111F24 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B79723FF27F1ADF000111F24 /* ActiveFarmingTableViewCell.swift */,
+				B797240027F1ADF000111F24 /* ActiveFarmingTableViewCell.xib */,
+				B797240627F1B99700111F24 /* FarmingHistoryTableViewCell.swift */,
+				B797240727F1B99700111F24 /* FarmingHistoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B797240327F1B8D500111F24 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B797240427F1B8E700111F24 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B7B87C2927F191D4003284C6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B7B87C2A27F191ED003284C6 /* FarmingNibVars.swift */,
+				B7B87C2C27F19200003284C6 /* FarmingOpener.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B7B87C2E27F1928A003284C6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B7B87C3127F192E9003284C6 /* ContentFarmingViewController.swift */,
+				B7C8028A27F19E1500B08918 /* FarmingHistoryViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +212,7 @@
 				TargetAttributes = {
 					B72AFDCE27F18B2400021B36 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -165,6 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B797240227F1ADF000111F24 /* ActiveFarmingTableViewCell.xib in Resources */,
+				B797240927F1B99700111F24 /* FarmingHistoryTableViewCell.xib in Resources */,
+				B797240527F1B8E700111F24 /* Assets.xcassets in Resources */,
+				B7B87C3027F192A8003284C6 /* Farming.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79723F927F1AA2100111F24 /* FarmingHistoryViewModel.swift in Sources */,
+				B7B87C2B27F191ED003284C6 /* FarmingNibVars.swift in Sources */,
+				B7B87C2D27F19200003284C6 /* FarmingOpener.swift in Sources */,
+				B7C8028B27F19E1600B08918 /* FarmingHistoryViewController.swift in Sources */,
+				B7B87C3227F192E9003284C6 /* ContentFarmingViewController.swift in Sources */,
+				B797240827F1B99700111F24 /* FarmingHistoryTableViewCell.swift in Sources */,
+				B797240127F1ADF000111F24 /* ActiveFarmingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 56FBD00C0ADA739753AEC4F8 /* Pods-Farming.debug (production).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -352,6 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -361,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E6FE35D68362C95CC4FCC7D /* Pods-Farming.release (production).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -454,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F5D989D8DF324B44D22A0BB5 /* Pods-Farming.debug (staging).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -474,6 +563,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -547,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40A3C97AFFB53C5752DDA79C /* Pods-Farming.debug (development).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -567,6 +658,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C67FD74E143C51F9C2463675 /* Pods-Farming.release (staging).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -721,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5EB92A9ED1F08114EE34241 /* Pods-Farming.release (development).xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
