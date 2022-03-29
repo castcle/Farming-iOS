@@ -27,7 +27,9 @@
 
 import UIKit
 import Core
+import Component
 import SwiftColor
+import PanModal
 
 class ActiveFarmingTableViewCell: UITableViewCell {
 
@@ -72,5 +74,7 @@ class ActiveFarmingTableViewCell: UITableViewCell {
     }
     
     @IBAction func unfarmAction(_ sender: Any) {
+        let vc = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
+        Utility.currentViewController().presentPanModal(vc ?? FarmingPopupViewController())
     }
 }
