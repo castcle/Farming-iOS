@@ -34,7 +34,6 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boost-page" translatesAutoresizingMaskIntoConstraints="NO" id="aOB-je-3RE">
                         <rect key="frame" x="40" y="40" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="aOB-je-3RE" secondAttribute="height" multiplier="1:1" id="WOZ-5f-ero"/>
                             <constraint firstAttribute="width" constant="20" id="tLu-R0-yfV"/>
                         </constraints>
                     </imageView>
@@ -80,7 +79,6 @@ Castcle is a new decentralized social media that revolutioniz</string>
                 </subviews>
                 <constraints>
                     <constraint firstItem="g1H-1x-1l9" firstAttribute="top" secondItem="r4B-QE-Cqt" secondAttribute="bottom" constant="15" id="0wS-hi-Z3q"/>
-                    <constraint firstItem="aOB-je-3RE" firstAttribute="width" secondItem="aOB-je-3RE" secondAttribute="height" multiplier="1:1" id="1Co-or-HmJ"/>
                     <constraint firstItem="OHq-xZ-uNl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="1yR-F2-zeQ"/>
                     <constraint firstItem="aOB-je-3RE" firstAttribute="width" secondItem="aOB-je-3RE" secondAttribute="height" multiplier="1:1" id="3Lj-oQ-jKq"/>
                     <constraint firstAttribute="trailing" secondItem="TFi-a5-ZHi" secondAttribute="trailing" constant="20" id="47M-X2-tYQ"/>
