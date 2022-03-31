@@ -44,6 +44,7 @@ class FarmingHistoryTableViewCell: UITableViewCell {
         self.avatarImage.circle()
         self.avatarImage.image = UIImage.Asset.userPlaceholder
         self.contentImage.image = UIImage.Asset.placeholder
+        self.typeImage.image = UIImage.Asset.typePageIcon
         self.lineView.backgroundColor = UIColor.Asset.darkGraphiteBlue
         self.displayNameLabel.font = UIFont.asset(.regular, fontSize: .body)
         self.displayNameLabel.textColor = UIColor.Asset.white

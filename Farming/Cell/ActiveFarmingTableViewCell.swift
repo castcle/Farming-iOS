@@ -49,6 +49,7 @@ class ActiveFarmingTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.avatarImage.circle()
         self.avatarImage.image = UIImage.Asset.userPlaceholder
+        self.typeImage.image = UIImage.Asset.typePageIcon
         self.contentImage.image = UIImage.Asset.placeholder
         self.lineView.backgroundColor = UIColor.Asset.darkGraphiteBlue
         self.displayNameLabel.font = UIFont.asset(.regular, fontSize: .body)
