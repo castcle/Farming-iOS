@@ -25,11 +25,7 @@
 //  Created by Castcle Co., Ltd. on 28/3/2565 BE.
 //
 
-public enum FarmingHistoryType {
-    case active
-    case history
-    case unknow
-}
+import Core
 
 final public class FarmingHistoryViewModel {
     
