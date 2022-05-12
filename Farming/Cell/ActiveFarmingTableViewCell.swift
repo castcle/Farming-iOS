@@ -44,7 +44,7 @@ class ActiveFarmingTableViewCell: UITableViewCell {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet var unfarmButton: UIButton!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.avatarImage.circle()
@@ -73,9 +73,9 @@ class ActiveFarmingTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     @IBAction func unfarmAction(_ sender: Any) {
-        let vc = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
-        Utility.currentViewController().presentPanModal(vc ?? FarmingPopupViewController())
+        let viewController = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
+        Utility.currentViewController().presentPanModal(viewController ?? FarmingPopupViewController())
     }
 }

@@ -32,17 +32,17 @@ import XLPagerTabStrip
 class FarmingHistoryViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    
+
     var viewModel = FarmingHistoryViewModel()
     var pageIndex: Int = 0
     var pageTitle: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.Asset.darkGraphiteBlue
         self.configureTableView()
     }
-    
+
     func configureTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -57,7 +57,7 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.viewModel.farmingHistoryType == .active {
             return 2
@@ -67,7 +67,7 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
             return 0
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.viewModel.farmingHistoryType == .active {
             let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.activeFarming, for: indexPath as IndexPath) as? ActiveFarmingTableViewCell
@@ -81,7 +81,7 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }

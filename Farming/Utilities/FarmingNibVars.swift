@@ -31,18 +31,18 @@ public struct FarmingNibVars {
         public static let contentFarming = "ContentFarmingViewController"
         public static let farmingHistory = "FarmingHistoryViewController"
     }
-    
+
     // MARK: - View
     public struct Storyboard {
         public static let farming = "Farming"
     }
-    
+
     // MARK: - TableViewCell
     public struct TableViewCell {
         public static let activeFarming = "ActiveFarmingTableViewCell"
         public static let farmingHistory = "FarmingHistoryTableViewCell"
     }
-    
+
     // MARK: - CollectionViewCell
     public struct CollectionViewCell {
     }

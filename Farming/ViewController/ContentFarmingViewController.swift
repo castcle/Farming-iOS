@@ -31,12 +31,12 @@ import XLPagerTabStrip
 import Defaults
 
 class ContentFarmingViewController: ButtonBarPagerTabStripViewController {
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupButtonBar()
     }
-    
+
     private func setupButtonBar() {
         settings.style.buttonBarBackgroundColor = UIColor.Asset.darkGraphiteBlue
         settings.style.buttonBarItemBackgroundColor = UIColor.Asset.darkGraphiteBlue
@@ -45,29 +45,29 @@ class ContentFarmingViewController: ButtonBarPagerTabStripViewController {
         settings.style.selectedBarHeight = 4
         settings.style.buttonBarItemFont = UIFont.asset(.bold, fontSize: .body)
         settings.style.buttonBarHeight = 60.0
-        
-        self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+
+        self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, _, _, _) -> Void in
             oldCell?.label.textColor = UIColor.Asset.white
             newCell?.label.textColor = UIColor.Asset.lightBlue
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
         self.view.backgroundColor = UIColor.Asset.darkGraphiteBlue
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavBar()
         Defaults[.screenId] = ""
     }
-    
+
     func setupNavBar() {
         self.customNavigationBar(.secondary, title: "Content Farming")
     }
-    
+
     // MARK: - PagerTabStripDataSource
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let vc1 = FarmingOpener.open(.farmingHistory(FarmingHistoryViewModel(type: .active))) as? FarmingHistoryViewController
@@ -79,7 +79,6 @@ class ContentFarmingViewController: ButtonBarPagerTabStripViewController {
         vc2?.pageIndex = 1
         vc2?.pageTitle = "Farming History"
         let farmingHistory = vc2 ?? FarmingHistoryViewController()
-        
 
         return [activeFarming, farmingHistory]
     }

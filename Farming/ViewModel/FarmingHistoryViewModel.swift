@@ -28,9 +28,9 @@
 import Core
 
 final public class FarmingHistoryViewModel {
-    
+
     var farmingHistoryType: FarmingHistoryType = .unknow
-    
+
     public init(type: FarmingHistoryType = .unknow) {
         self.farmingHistoryType = type
     }

@@ -38,7 +38,7 @@ class FarmingHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var balanceTitleLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.avatarImage.circle()

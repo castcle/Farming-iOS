@@ -38,13 +38,13 @@ public struct FarmingOpener {
         switch farmingScene {
         case .contentFarming:
             let storyboard: UIStoryboard = UIStoryboard(name: FarmingNibVars.Storyboard.farming, bundle: ConfigBundle.farming)
-            let vc = storyboard.instantiateViewController(withIdentifier: FarmingNibVars.ViewController.contentFarming)
-            return vc
+            let viewController = storyboard.instantiateViewController(withIdentifier: FarmingNibVars.ViewController.contentFarming)
+            return viewController
         case .farmingHistory(let viewModel):
             let storyboard: UIStoryboard = UIStoryboard(name: FarmingNibVars.Storyboard.farming, bundle: ConfigBundle.farming)
-            let vc = storyboard.instantiateViewController(withIdentifier: FarmingNibVars.ViewController.farmingHistory) as? FarmingHistoryViewController
-            vc?.viewModel = viewModel
-            return vc ?? FarmingHistoryViewController()
+            let viewController = storyboard.instantiateViewController(withIdentifier: FarmingNibVars.ViewController.farmingHistory) as? FarmingHistoryViewController
+            viewController?.viewModel = viewModel
+            return viewController ?? FarmingHistoryViewController()
         }
     }
 }
