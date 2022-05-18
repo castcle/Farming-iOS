@@ -82,5 +82,4 @@ class ContentFarmingViewController: ButtonBarPagerTabStripViewController {
 
         return [activeFarming, farmingHistory]
     }
-
 }
