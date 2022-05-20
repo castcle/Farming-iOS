@@ -81,9 +81,6 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         }
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
 }
 
 extension FarmingHistoryViewController: IndicatorInfoProvider {
