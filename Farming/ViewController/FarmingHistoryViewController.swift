@@ -71,11 +71,11 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.viewModel.farmingHistoryType == .active {
             let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.activeFarming, for: indexPath as IndexPath) as? ActiveFarmingTableViewCell
-            cell?.backgroundColor = UIColor.Asset.darkGray
+            cell?.backgroundColor = UIColor.Asset.cellBackground
             return cell ?? ActiveFarmingTableViewCell()
         } else if self.viewModel.farmingHistoryType == .history {
             let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.farmingHistory, for: indexPath as IndexPath) as? FarmingHistoryTableViewCell
-            cell?.backgroundColor = UIColor.Asset.darkGray
+            cell?.backgroundColor = UIColor.Asset.cellBackground
             return cell ?? FarmingHistoryTableViewCell()
         } else {
             return UITableViewCell()
