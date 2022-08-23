@@ -27,15 +27,20 @@
 
 import UIKit
 import Core
+import Networking
 import Component
 import SwiftColor
 import PanModal
 
+protocol ActiveFarmingTableViewCellDelegate: AnyObject {
+    func activeFarmingTableViewCellDidUnfarm(_ cell: ActiveFarmingTableViewCell, farming: Farming)
+}
+
 class ActiveFarmingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var avatarImage: UIImageView!
-    @IBOutlet weak var typeImage: UIImageView!
     @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var castcleIdLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet var contentImage: UIImageView!
@@ -45,15 +50,19 @@ class ActiveFarmingTableViewCell: UITableViewCell {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet var unfarmButton: UIButton!
 
+    var delegate: ActiveFarmingTableViewCellDelegate?
+    private var farming: Farming = Farming()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.avatarImage.circle()
         self.avatarImage.image = UIImage.Asset.userPlaceholder
-        self.typeImage.image = UIImage.Asset.typePageIcon
         self.contentImage.image = UIImage.Asset.placeholder
-        self.lineView.backgroundColor = UIColor.Asset.darkGraphiteBlue
+        self.lineView.backgroundColor = UIColor.Asset.lineGray
         self.displayNameLabel.font = UIFont.asset(.regular, fontSize: .body)
         self.displayNameLabel.textColor = UIColor.Asset.white
+        self.castcleIdLabel.font = UIFont.asset(.regular, fontSize: .small)
+        self.castcleIdLabel.textColor = UIColor.Asset.white
         self.countLabel.font = UIFont.asset(.regular, fontSize: .body)
         self.countLabel.textColor = UIColor.Asset.lightBlue
         self.balanceTitleLabel.font = UIFont.asset(.regular, fontSize: .body)
@@ -74,8 +83,26 @@ class ActiveFarmingTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    func configCell(farming: Farming) {
+        self.farming = farming
+        self.countLabel.text = "\(self.farming.number)/20"
+        self.balanceLabel.text = "\(self.farming.balance.farming) CAST"
+        self.dateLabel.text = "\(self.farming.farmingDateDisplay.dateToString()) \(self.farming.farmingDateDisplay.timeToString())"
+        let author = ContentHelper.shared.getAuthorRef(id: self.farming.content.authorId)
+        self.displayNameLabel.text = author?.displayName ?? "Castcle"
+        self.castcleIdLabel.text = author?.castcleId ?? "@castcle"
+        self.messageLabel.text = (self.farming.content.message.isEmpty ? "N/A" : self.farming.content.message)
+        let authorAvatarUrl = URL(string: author?.avatar ?? "")
+        self.avatarImage.kf.setImage(with: authorAvatarUrl, placeholder: UIImage.Asset.userPlaceholder, options: [.transition(.fade(0.35))])
+        if let imageUrl = farming.content.photo.first {
+            let url = URL(string: imageUrl.thumbnail)
+            self.contentImage.kf.setImage(with: url, placeholder: UIImage.Asset.placeholder, options: [.transition(.fade(0.35))])
+        } else {
+            self.contentImage.image = UIImage.Asset.placeholder
+        }
+    }
+
     @IBAction func unfarmAction(_ sender: Any) {
-//        let viewController = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
-//        Utility.currentViewController().presentPanModal(viewController ?? FarmingPopupViewController())
+        self.delegate?.activeFarmingTableViewCellDidUnfarm(self, farming: self.farming)
     }
 }

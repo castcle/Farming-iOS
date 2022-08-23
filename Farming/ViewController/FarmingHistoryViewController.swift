@@ -27,6 +27,8 @@
 
 import UIKit
 import Core
+import Component
+import Networking
 import XLPagerTabStrip
 
 class FarmingHistoryViewController: UIViewController {
@@ -41,11 +43,58 @@ class FarmingHistoryViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.Asset.darkGraphiteBlue
         self.configureTableView()
+        if self.viewModel.farmingHistoryType == .active {
+            self.viewModel.getFarmingActive()
+        } else if self.viewModel.farmingHistoryType == .history {
+            self.viewModel.getFarmingHistory()
+        }
+        self.tableView.coreRefresh.addHeadRefresh(animator: FastAnimator()) {
+            self.tableView.coreRefresh.resetNoMore()
+            self.tableView.isScrollEnabled = false
+            self.viewModel.farmings = []
+            self.viewModel.farmingRequest = FarmingRequest()
+            self.viewModel.meta = Meta()
+            self.viewModel.loadState = .loading
+            self.tableView.reloadData()
+            if self.viewModel.farmingHistoryType == .active {
+                self.viewModel.getFarmingActive()
+            } else if self.viewModel.farmingHistoryType == .history {
+                self.viewModel.getFarmingHistory()
+            }
+        }
+        self.tableView.coreRefresh.addFootRefresh(animator: NormalFooterAnimator()) {
+            if self.viewModel.farmingHistoryType == .active {
+                self.tableView.coreRefresh.noticeNoMoreData()
+            } else {
+                self.viewModel.farmingRequest.untilId = self.viewModel.meta.oldestId
+                self.viewModel.getFarmingHistory()
+            }
+        }
+        self.viewModel.didLoadFarmingFinish = {
+            CCLoading.shared.dismiss()
+            self.viewModel.loadState = .loaded
+            self.tableView.isScrollEnabled = true
+            self.tableView.coreRefresh.endHeaderRefresh()
+            self.tableView.coreRefresh.endLoadingMore()
+            if self.viewModel.farmingHistoryType == .active {
+                self.tableView.coreRefresh.noticeNoMoreData()
+            } else {
+                if self.viewModel.meta.resultCount < self.viewModel.farmingRequest.maxResults {
+                    self.tableView.coreRefresh.noticeNoMoreData()
+                }
+            }
+            self.tableView.reloadData()
+        }
+        self.viewModel.didError = {
+            CCLoading.shared.dismiss()
+        }
     }
 
     func configureTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.isScrollEnabled = false
+        self.tableView.register(UINib(nibName: ComponentNibVars.TableViewCell.skeletonUser, bundle: ConfigBundle.component), forCellReuseIdentifier: ComponentNibVars.TableViewCell.skeletonUser)
         self.tableView.register(UINib(nibName: FarmingNibVars.TableViewCell.activeFarming, bundle: ConfigBundle.farming), forCellReuseIdentifier: FarmingNibVars.TableViewCell.activeFarming)
         self.tableView.register(UINib(nibName: FarmingNibVars.TableViewCell.farmingHistory, bundle: ConfigBundle.farming), forCellReuseIdentifier: FarmingNibVars.TableViewCell.farmingHistory)
         self.tableView.rowHeight = UITableView.automaticDimension
@@ -59,27 +108,40 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.viewModel.farmingHistoryType == .active {
-            return 2
-        } else if self.viewModel.farmingHistoryType == .history {
-            return 3
+        if self.viewModel.loadState == .loading {
+            return 5
         } else {
-            return 0
+            return self.viewModel.farmings.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.viewModel.farmingHistoryType == .active {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.activeFarming, for: indexPath as IndexPath) as? ActiveFarmingTableViewCell
+        if self.viewModel.loadState == .loading {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ComponentNibVars.TableViewCell.skeletonUser, for: indexPath as IndexPath) as? SkeletonUserTableViewCell
+            cell?.configCell()
             cell?.backgroundColor = UIColor.Asset.cellBackground
-            return cell ?? ActiveFarmingTableViewCell()
-        } else if self.viewModel.farmingHistoryType == .history {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.farmingHistory, for: indexPath as IndexPath) as? FarmingHistoryTableViewCell
-            cell?.backgroundColor = UIColor.Asset.cellBackground
-            return cell ?? FarmingHistoryTableViewCell()
+            return cell ?? SkeletonUserTableViewCell()
         } else {
-            return UITableViewCell()
+            if self.viewModel.farmingHistoryType == .active {
+                let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.activeFarming, for: indexPath as IndexPath) as? ActiveFarmingTableViewCell
+                cell?.backgroundColor = UIColor.Asset.darkGraphiteBlue
+                cell?.configCell(farming: self.viewModel.farmings[indexPath.row])
+                cell?.delegate = self
+                return cell ?? ActiveFarmingTableViewCell()
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: FarmingNibVars.TableViewCell.farmingHistory, for: indexPath as IndexPath) as? FarmingHistoryTableViewCell
+                cell?.backgroundColor = UIColor.Asset.darkGraphiteBlue
+                cell?.configCell(farming: self.viewModel.farmings[indexPath.row])
+                return cell ?? FarmingHistoryTableViewCell()
+            }
         }
+    }
+}
+
+extension FarmingHistoryViewController: ActiveFarmingTableViewCellDelegate {
+    func activeFarmingTableViewCellDidUnfarm(_ cell: ActiveFarmingTableViewCell, farming: Farming) {
+        CCLoading.shared.show(text: "Unfarming")
+        self.viewModel.unfarmingCast(farmId: farming.id)
     }
 }
 
