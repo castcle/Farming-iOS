@@ -75,7 +75,7 @@ class ActiveFarmingTableViewCell: UITableViewCell {
     }
 
     @IBAction func unfarmAction(_ sender: Any) {
-        let viewController = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
-        Utility.currentViewController().presentPanModal(viewController ?? FarmingPopupViewController())
+//        let viewController = ComponentOpener.open(.farmingPopup(FarmingPopupViewModel(type: .unfarn))) as? FarmingPopupViewController
+//        Utility.currentViewController().presentPanModal(viewController ?? FarmingPopupViewController())
     }
 }

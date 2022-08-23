@@ -26,12 +26,50 @@
 //
 
 import Core
+import Networking
+import SwiftyJSON
 
 final public class FarmingHistoryViewModel {
 
+    private var farmingRepository: FarmingRepository = FarmingRepositoryImpl()
+    let tokenHelper: TokenHelper = TokenHelper()
+    var farmings: [Farming] = []
     var farmingHistoryType: FarmingHistoryType = .unknow
+    var state: State = .none
+    var loadState: LoadState = .loading
 
     public init(type: FarmingHistoryType = .unknow) {
+        self.tokenHelper.delegate = self
         self.farmingHistoryType = type
+    }
+
+    func getFarmingActive() {
+        self.state = .getFarmingActive
+        self.farmingRepository.getFarmingActive { (success, response, isRefreshToken)  in
+            if success {
+                do {
+                    let rawJson = try response.mapJSON()
+                    let json = JSON(rawJson)
+                    self.farmings = (json[JsonKey.payload.rawValue].arrayValue).map { Farming(json: $0) }
+                    self.didLoadFarmingFinish?()
+                } catch {}
+            } else {
+                if isRefreshToken {
+                    self.tokenHelper.refreshToken()
+                }
+            }
+        }
+    }
+
+    var didLoadFarmingFinish: (() -> Void)?
+}
+
+extension FarmingHistoryViewModel: TokenHelperDelegate {
+    public func didRefreshTokenFinish() {
+//        if self.state == .farmingLookup {
+//            self.farmingLookup()
+//        } else if self.state == .farmingCast {
+//            self.farmingCast()
+//        }
     }
 }
