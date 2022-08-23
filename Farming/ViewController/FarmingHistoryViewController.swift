@@ -136,6 +136,14 @@ extension FarmingHistoryViewController: UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let farm = self.viewModel.farmings[indexPath.row]
+        let castDict: [String: String] = [
+            JsonKey.contentId.rawValue: farm.content.id
+        ]
+        NotificationCenter.default.post(name: .openCastDelegate, object: nil, userInfo: castDict)
+    }
 }
 
 extension FarmingHistoryViewController: ActiveFarmingTableViewCellDelegate {
