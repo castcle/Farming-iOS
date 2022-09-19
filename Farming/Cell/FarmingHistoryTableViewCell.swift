@@ -40,6 +40,11 @@ class FarmingHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var balanceTitleLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var contentFullView: UIView!
+    @IBOutlet weak var contentImageView: UIView!
+    @IBOutlet weak var contentTextView: UIView!
+    @IBOutlet weak var messageOnlyLabel: UILabel!
+    @IBOutlet var contentOnlyImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,6 +64,8 @@ class FarmingHistoryTableViewCell: UITableViewCell {
         self.dateLabel.textColor = UIColor.Asset.white
         self.messageLabel.font = UIFont.asset(.regular, fontSize: .small)
         self.messageLabel.textColor = UIColor.Asset.white
+        self.messageOnlyLabel.font = UIFont.asset(.regular, fontSize: .small)
+        self.messageOnlyLabel.textColor = UIColor.Asset.white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -71,14 +78,27 @@ class FarmingHistoryTableViewCell: UITableViewCell {
         let author = ContentHelper.shared.getAuthorRef(id: farming.content.authorId)
         self.displayNameLabel.text = author?.displayName ?? "Castcle"
         self.castcleIdLabel.text = author?.castcleId ?? "@castcle"
-        self.messageLabel.text = (farming.content.message.isEmpty ? "N/A" : farming.content.message)
         let authorAvatarUrl = URL(string: author?.avatar ?? "")
         self.avatarImage.kf.setImage(with: authorAvatarUrl, placeholder: UIImage.Asset.userPlaceholder, options: [.transition(.fade(0.35))])
-        if let imageUrl = farming.content.photo.first {
+
+        if !farming.content.message.isEmpty, let imageUrl = farming.content.photo.first {
+            self.contentFullView.isHidden = false
+            self.contentImageView.isHidden = true
+            self.contentTextView.isHidden = true
             let url = URL(string: imageUrl.thumbnail)
             self.contentImage.kf.setImage(with: url, placeholder: UIImage.Asset.placeholder, options: [.transition(.fade(0.35))])
+            self.messageLabel.text = farming.content.message
+        } else if let imageUrl = farming.content.photo.first {
+            self.contentFullView.isHidden = true
+            self.contentImageView.isHidden = false
+            self.contentTextView.isHidden = true
+            let url = URL(string: imageUrl.thumbnail)
+            self.contentOnlyImage.kf.setImage(with: url, placeholder: UIImage.Asset.placeholder, options: [.transition(.fade(0.35))])
         } else {
-            self.contentImage.image = UIImage.Asset.placeholder
+            self.contentFullView.isHidden = true
+            self.contentImageView.isHidden = true
+            self.contentTextView.isHidden = false
+            self.messageOnlyLabel.text = farming.content.message
         }
     }
 }

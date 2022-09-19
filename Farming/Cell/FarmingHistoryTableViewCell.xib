@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,22 +37,74 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4B-QE-Cqt">
-                        <rect key="frame" x="20" y="80" width="66.5" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="8nC-Q7-oCU"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="16 Nov 2021 08:38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPh-kt-1uD">
-                        <rect key="frame" x="20" y="150" width="280" height="26"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4l-io-MzP">
-                        <rect key="frame" x="96.5" y="83.5" width="203.5" height="43"/>
-                        <string key="text">What is Castcle? 
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUK-m6-zWF">
+                        <rect key="frame" x="20" y="75" width="280" height="70"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4B-QE-Cqt">
+                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r4B-QE-Cqt" secondAttribute="height" multiplier="4:3" id="0th-Ec-ROu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4l-io-MzP">
+                                <rect key="frame" x="103.5" y="13.5" width="176.5" height="43"/>
+                                <string key="text">What is Castcle? 
 Castcle is a new decentralized social media that revolutioniz</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r4B-QE-Cqt" firstAttribute="top" secondItem="iUK-m6-zWF" secondAttribute="top" id="4oS-wP-PNt"/>
+                            <constraint firstItem="E4l-io-MzP" firstAttribute="leading" secondItem="r4B-QE-Cqt" secondAttribute="trailing" constant="10" id="Lnp-tf-5JM"/>
+                            <constraint firstAttribute="height" constant="70" id="MY0-oD-jhT"/>
+                            <constraint firstAttribute="bottom" secondItem="r4B-QE-Cqt" secondAttribute="bottom" id="fgR-Ee-Pju"/>
+                            <constraint firstAttribute="trailing" secondItem="E4l-io-MzP" secondAttribute="trailing" id="jXt-rY-7fP"/>
+                            <constraint firstItem="E4l-io-MzP" firstAttribute="centerY" secondItem="r4B-QE-Cqt" secondAttribute="centerY" id="tTm-ij-rmE"/>
+                            <constraint firstItem="r4B-QE-Cqt" firstAttribute="leading" secondItem="iUK-m6-zWF" secondAttribute="leading" id="tpV-Lr-NWb"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-Ow-CQO">
+                        <rect key="frame" x="20" y="75" width="280" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXN-jm-2Dk">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
+                                <string key="text">What is Castcle? 
+Castcle is a new decentralized social media that revolutioniz</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rXN-jm-2Dk" firstAttribute="leading" secondItem="KN5-Ow-CQO" secondAttribute="leading" id="1HY-03-x8a"/>
+                            <constraint firstItem="rXN-jm-2Dk" firstAttribute="top" secondItem="KN5-Ow-CQO" secondAttribute="top" id="MBB-Wt-av1"/>
+                            <constraint firstAttribute="height" constant="70" id="Ppe-Qr-aou"/>
+                            <constraint firstAttribute="trailing" secondItem="rXN-jm-2Dk" secondAttribute="trailing" id="kRp-Tg-Hsk"/>
+                            <constraint firstAttribute="bottom" secondItem="rXN-jm-2Dk" secondAttribute="bottom" id="vgw-dH-wuG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mP4-t8-WfB">
+                        <rect key="frame" x="20" y="75" width="280" height="70"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="53w-mq-9qx">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="53w-mq-9qx" firstAttribute="leading" secondItem="mP4-t8-WfB" secondAttribute="leading" id="209-8K-2rL"/>
+                            <constraint firstAttribute="height" constant="70" id="XRW-3U-JN5"/>
+                            <constraint firstAttribute="bottom" secondItem="53w-mq-9qx" secondAttribute="bottom" id="dEU-KK-dWT"/>
+                            <constraint firstItem="53w-mq-9qx" firstAttribute="top" secondItem="mP4-t8-WfB" secondAttribute="top" id="eb5-5P-6f4"/>
+                            <constraint firstAttribute="trailing" secondItem="53w-mq-9qx" secondAttribute="trailing" id="elR-0c-I0X"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="16 Nov 2021 08:38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPh-kt-1uD">
+                        <rect key="frame" x="20" y="160" width="280" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -82,28 +134,33 @@ Castcle is a new decentralized social media that revolutioniz</string>
                     <constraint firstAttribute="trailing" secondItem="yPh-kt-1uD" secondAttribute="trailing" constant="20" id="3IZ-B7-Rve"/>
                     <constraint firstAttribute="trailing" secondItem="TFi-a5-ZHi" secondAttribute="trailing" constant="20" id="47M-X2-tYQ"/>
                     <constraint firstItem="yhe-Cg-yCE" firstAttribute="leading" secondItem="g1H-1x-1l9" secondAttribute="trailing" constant="10" id="7Np-JL-gzV"/>
-                    <constraint firstItem="r4B-QE-Cqt" firstAttribute="top" secondItem="OHq-xZ-uNl" secondAttribute="bottom" constant="20" id="CC8-1M-ZTS"/>
+                    <constraint firstItem="KN5-Ow-CQO" firstAttribute="leading" secondItem="iUK-m6-zWF" secondAttribute="leading" id="9DT-Q6-QN2"/>
+                    <constraint firstItem="mP4-t8-WfB" firstAttribute="centerX" secondItem="iUK-m6-zWF" secondAttribute="centerX" id="DXe-hh-QiR"/>
                     <constraint firstAttribute="bottom" secondItem="voY-aR-Lue" secondAttribute="bottom" id="DoI-Qg-3o6"/>
                     <constraint firstItem="voY-aR-Lue" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FXO-cV-DLV"/>
                     <constraint firstAttribute="trailing" secondItem="7I5-oe-nwW" secondAttribute="trailing" constant="20" id="GmD-hk-zpc"/>
                     <constraint firstItem="yPh-kt-1uD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LXB-h4-4sM"/>
-                    <constraint firstItem="E4l-io-MzP" firstAttribute="centerY" secondItem="r4B-QE-Cqt" secondAttribute="centerY" id="NcC-6M-IlD"/>
                     <constraint firstItem="7I5-oe-nwW" firstAttribute="leading" secondItem="TFi-a5-ZHi" secondAttribute="leading" id="PDR-Zk-cGy"/>
-                    <constraint firstItem="r4B-QE-Cqt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="T1p-bT-yqJ"/>
+                    <constraint firstItem="mP4-t8-WfB" firstAttribute="leading" secondItem="iUK-m6-zWF" secondAttribute="leading" id="QoB-bH-hoo"/>
+                    <constraint firstItem="yPh-kt-1uD" firstAttribute="top" secondItem="iUK-m6-zWF" secondAttribute="bottom" constant="15" id="RRH-sH-MRq"/>
                     <constraint firstItem="7I5-oe-nwW" firstAttribute="top" secondItem="TFi-a5-ZHi" secondAttribute="bottom" id="TgD-zW-RgJ"/>
-                    <constraint firstAttribute="trailing" secondItem="E4l-io-MzP" secondAttribute="trailing" constant="20" id="TqI-kH-ATq"/>
                     <constraint firstItem="g1H-1x-1l9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="YnB-TM-MVv"/>
-                    <constraint firstItem="r4B-QE-Cqt" firstAttribute="width" secondItem="r4B-QE-Cqt" secondAttribute="height" multiplier="4:3" id="aAp-b4-fMR"/>
+                    <constraint firstAttribute="trailing" secondItem="iUK-m6-zWF" secondAttribute="trailing" constant="20" id="YyJ-ZK-92X"/>
+                    <constraint firstItem="iUK-m6-zWF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cM2-ht-Dvv"/>
                     <constraint firstItem="OHq-xZ-uNl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ddE-EE-AT4"/>
-                    <constraint firstItem="yPh-kt-1uD" firstAttribute="top" secondItem="r4B-QE-Cqt" secondAttribute="bottom" constant="20" id="ddg-ua-Bvk"/>
                     <constraint firstItem="g1H-1x-1l9" firstAttribute="top" secondItem="yPh-kt-1uD" secondAttribute="bottom" constant="5" id="flH-q2-Ue0"/>
                     <constraint firstItem="voY-aR-Lue" firstAttribute="top" secondItem="g1H-1x-1l9" secondAttribute="bottom" constant="20" id="jti-s8-gbh"/>
+                    <constraint firstItem="iUK-m6-zWF" firstAttribute="top" secondItem="OHq-xZ-uNl" secondAttribute="bottom" constant="15" id="k8D-Vz-RfB"/>
                     <constraint firstAttribute="trailing" secondItem="yhe-Cg-yCE" secondAttribute="trailing" constant="20" id="kJc-GZ-0hJ"/>
-                    <constraint firstItem="E4l-io-MzP" firstAttribute="leading" secondItem="r4B-QE-Cqt" secondAttribute="trailing" constant="10" id="kjp-h8-h3N"/>
+                    <constraint firstItem="mP4-t8-WfB" firstAttribute="trailing" secondItem="iUK-m6-zWF" secondAttribute="trailing" id="kuy-Tg-rFR"/>
+                    <constraint firstItem="KN5-Ow-CQO" firstAttribute="centerY" secondItem="iUK-m6-zWF" secondAttribute="centerY" id="mHL-sn-Cpo"/>
+                    <constraint firstItem="KN5-Ow-CQO" firstAttribute="centerX" secondItem="iUK-m6-zWF" secondAttribute="centerX" id="qOE-Dj-5py"/>
                     <constraint firstItem="TFi-a5-ZHi" firstAttribute="leading" secondItem="OHq-xZ-uNl" secondAttribute="trailing" constant="15" id="sYz-pY-hWV"/>
                     <constraint firstAttribute="trailing" secondItem="voY-aR-Lue" secondAttribute="trailing" id="vQ8-e6-sJI"/>
+                    <constraint firstItem="KN5-Ow-CQO" firstAttribute="trailing" secondItem="iUK-m6-zWF" secondAttribute="trailing" id="vl6-Qk-AVh"/>
                     <constraint firstItem="TFi-a5-ZHi" firstAttribute="top" secondItem="OHq-xZ-uNl" secondAttribute="top" id="w2Y-Cc-XtI"/>
                     <constraint firstItem="yhe-Cg-yCE" firstAttribute="centerY" secondItem="g1H-1x-1l9" secondAttribute="centerY" id="xAm-fG-oxo"/>
+                    <constraint firstItem="mP4-t8-WfB" firstAttribute="centerY" secondItem="iUK-m6-zWF" secondAttribute="centerY" id="zZF-xc-GHP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -112,11 +169,16 @@ Castcle is a new decentralized social media that revolutioniz</string>
                 <outlet property="balanceLabel" destination="yhe-Cg-yCE" id="69f-C3-rZr"/>
                 <outlet property="balanceTitleLabel" destination="g1H-1x-1l9" id="262-zl-6lF"/>
                 <outlet property="castcleIdLabel" destination="7I5-oe-nwW" id="H9z-1r-HTD"/>
+                <outlet property="contentFullView" destination="iUK-m6-zWF" id="pol-eY-1fl"/>
                 <outlet property="contentImage" destination="r4B-QE-Cqt" id="wxr-hk-Vh9"/>
+                <outlet property="contentImageView" destination="mP4-t8-WfB" id="g6A-PT-o6Z"/>
+                <outlet property="contentOnlyImage" destination="53w-mq-9qx" id="FgD-dt-tP1"/>
+                <outlet property="contentTextView" destination="KN5-Ow-CQO" id="tpf-h0-oek"/>
                 <outlet property="dateLabel" destination="yPh-kt-1uD" id="lPO-W1-YNR"/>
                 <outlet property="displayNameLabel" destination="TFi-a5-ZHi" id="dFx-bi-1Y6"/>
                 <outlet property="lineView" destination="voY-aR-Lue" id="fDl-M8-D3e"/>
                 <outlet property="messageLabel" destination="E4l-io-MzP" id="Py2-mM-cnc"/>
+                <outlet property="messageOnlyLabel" destination="rXN-jm-2Dk" id="SOg-lb-mKb"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="158.70535714285714"/>
         </tableViewCell>
